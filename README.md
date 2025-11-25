@@ -130,6 +130,10 @@ export LD_LIBRARY_PATH="/home/<username>/Qt/6.9.3/gcc_arm64/bin:$LD_LIBRARY_PATH
 $Env:Path += ";C:\Qt\6.9.3\msvc2022_arm64\lib;C:\Qt\6.9.3\msvc2022_arm64\bin"
 ```
 
+One of the steps in the workflows defined in the `CMakePresets.json` file
+involves running tests. If your application and, consequently, your tests depend
+on Qt, you must add the Qt libraries to the path before running the workflows.
+
 One last thing, I've encountered a situation on Windows where having Strawberry
 Perl installed can interfere with or disable Cppcheck. Just something to keep in
 mind.
@@ -156,6 +160,7 @@ sudo apt-get install -y build-essential libgl1-mesa-dev gdb
 sudo apt-get install -y pkg-config autoconf autoconf-archive
 sudo apt-get install -y libtool curl zip unzip tar
 sudo apt-get install -y linux-headers-$(uname -r)
+sudo apt-get install -y bison flex
 ```
 
 This template depends on vcpkg. Follow its
@@ -199,7 +204,8 @@ and follow the setup instructions. After installation, update the `QTDIR` path i
 the `CMakePresets.json` file accordingly. If your environment supports GUI
 applications, you can complete the installation using the standard graphical
 setup. Otherwise, you can run the online installer through its command-line
-interface. To install all required components, run the following commands:
+interface. To install all required dependencies and Qt, run the following
+commands:
 
 ```bash
 # Install Qt for X11 requirements. For more details, see the following links:
