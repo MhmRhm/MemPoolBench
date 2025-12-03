@@ -228,6 +228,9 @@ chmod +x ./qt-online-installer-linux-arm64-4.10.0.run
 # After the base installation, install additional components using the MaintenanceTool:
 cd ~/Qt/
 ./MaintenanceTool install qt.qt6.6100.addons
+
+# Install Qt IDE if needed.
+./MaintenanceTool install qt.tools.qtcreator_gui
 ```
 
 The following tools are used in this project:
