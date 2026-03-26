@@ -3,8 +3,8 @@ add_executable(google_test_libsee
 )
 
 target_link_libraries(google_test_libsee
-	PRIVATE libsee_static
 	PRIVATE precompiled
+	PRIVATE libsee_obj
 )
 
 Format(google_test_libsee .)
