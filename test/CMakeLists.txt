@@ -1,4 +1,3 @@
 include(Testing)
 
-add_subdirectory(libsee)
-add_subdirectory(see)
+add_subdirectory(libpool)

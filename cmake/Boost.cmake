@@ -3,6 +3,7 @@ find_package(Boost 1.89.0 REQUIRED COMPONENTS
 	system
 	coroutine2
 	thread
+	lockfree
 	regex
 	asio
 	program_options
